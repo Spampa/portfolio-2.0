@@ -31,9 +31,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${sourceCodePro.className} scroll-smooth`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${sourceCodePro.className}`}
       >
         <Navbar></Navbar>
         {children}
