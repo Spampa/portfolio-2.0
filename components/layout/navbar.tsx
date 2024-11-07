@@ -24,23 +24,23 @@ export const Navbar = () => {
                             </Link>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <Link href="/" legacyBehavior passHref>
+                            <Link href="#skills" legacyBehavior passHref>
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                     Skills
                                 </NavigationMenuLink>
                             </Link>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <Link href="/" legacyBehavior passHref>
+                            <Link href="#projects" legacyBehavior passHref>
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                     Projects
                                 </NavigationMenuLink>
                             </Link>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <Link href="/" legacyBehavior passHref>
+                            <Link href="#contact" legacyBehavior passHref>
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Contact Me
+                                    Contact
                                 </NavigationMenuLink>
                             </Link>
                         </NavigationMenuItem>

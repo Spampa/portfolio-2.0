@@ -7,14 +7,14 @@ export const School = () => {
         <Container className="bg-card text-primary flex items-center">
             <Path title="💻 My Computer Science Path">
                 <PathItem
-                    title="🏫 I.T.I.S. P. Paleocapa"
+                    title="🏫 I.T.I.S. P. Paleocapa (BG)"
                     years="2019 - 2024"
-                    description="Hello World"
+                    description="I graduated from high school in Italy with a focus on computer science, achieving a final grade of 100/100."
                 />
                 <PathItem
                     title="🏫 UNIBG Ingegneria Informatica"
-                    years="2024 - 2024"
-                    description="Hello World"
+                    years="2024 - In Progress"
+                    description="I began my studies in computer engineering after graduating from high school."
                 />
             </Path>
         </Container>

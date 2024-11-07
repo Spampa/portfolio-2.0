@@ -18,7 +18,7 @@ interface PathItemProps{
 
 export const Path = ({children, title}:PathProps) => {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col" >
             <TitlePath title={title}></TitlePath>
             <div className="border-l-4 relative py-2 flex flex-col gap-6">
                 {children}
@@ -38,8 +38,9 @@ export const PathItem = ({ title, years, description }: PathItemProps) => {
         <div className="relative right-2 flex flex-row items-baseline gap-2">
             <div className="h-3 w-3 bg-primary rounded-full"></div>
             <div className="flex flex-col gap-1">
-                <h3 className="text-lg font-medium">{title} <span className=" font-normal">{years}</span></h3>
-                <p>{description}</p>
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <p className=" font-medium">{years}</p>
+                <p className="max-w-md">{description}</p>
             </div>
         </div>
     )

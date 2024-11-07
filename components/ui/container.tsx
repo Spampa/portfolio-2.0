@@ -4,11 +4,12 @@ import { cn } from '@/lib/utils';
 interface ContainerProps {
     children: ReactNode;
     className?: string
+    id?: string
 }
 
-export const Container = ({children, className}:ContainerProps) => {
+export const Container = ({children, className, id}:ContainerProps) => {
     return(
-        <div className={cn( "bg-primary w-full text-primary-foreground h-screen p-6 md:px-24 py-14 place-content-center", className)}>
+        <div id={id} className={cn( "bg-primary w-full text-primary-foreground min-h-screen p-6 md:px-24 pt-14 place-content-center", className)}>
             {children}
         </div>
     )
