@@ -1,5 +1,8 @@
 'use client'
-import { FormEvent } from "react"
+import { FormEvent, useState } from "react"
+
+//send email
+import emailjs from "@emailjs/browser"
 
 import { Container } from "@/components/ui/container"
 import {
@@ -11,6 +14,8 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+
 import { Input } from "@/components/ui/input"
 import { Label } from "@radix-ui/react-label"
 import { Textarea } from "@/components/ui/textarea"
@@ -21,7 +26,10 @@ import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 export const Contact = () => {
-    async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    const [ isButtonDisabled, setIsButtonDisabled ] = useState(false);
+    const [ message, setMessage ] = useState('');
+    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+        setIsButtonDisabled(true);
         event.preventDefault();
 
         const formData = new FormData(event.currentTarget);
@@ -30,17 +38,14 @@ export const Contact = () => {
             formObject[key] = value;
         });
 
-        const response = await fetch('/api/email', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formObject)
-        });
-
-        const data = await response.json();
-
-        console.log(data);
+        try{
+            await emailjs.send("service_a14ysfy", "template_5fynrem", formObject, { publicKey: "HVrXTNvOJanq7mOl9" });
+            setMessage('✔️ Email sended correctly :)');
+        }
+        catch(err){
+            setMessage('❗Error retry later...');
+        }
+        setIsButtonDisabled(false);
     }
 
     return (
@@ -50,23 +55,24 @@ export const Contact = () => {
                     <CardTitle>Contact Me!</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <form onSubmit={onSubmit}>
+                    <form onSubmit={handleSubmit}>
                         <div className="grid w-full items-center gap-4">
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="subject">Name</Label>
-                                <Input name="subject" required={true} placeholder="Full Name" />
+                                <Input name="from_name" required={true} placeholder="Full Name" />
                             </div>
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="from">Email</Label>
-                                <Input name="from" type="email" required={true} placeholder="Email" />
+                                <Input name="from_email" type="email" required={true} placeholder="Email" />
                             </div>
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="message">Message</Label>
                                 <Textarea name="message" className="resize-none" required={true} placeholder="Type your message here." />
                             </div>
-                            <Button type="submit">
+                            <Button disabled={isButtonDisabled} type="submit" >
                                 Send Message
                             </Button>
+                            <p className="text-xs">{message}</p>
                         </div>
                     </form>
                 </CardContent>

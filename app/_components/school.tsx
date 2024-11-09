@@ -5,7 +5,7 @@ import { Path, PathItem } from "@/components/ui/path"
 export const School = () => {
     return (
         <Container className="bg-card text-primary flex items-center">
-            <Path title="💻 My Computer Science Path">
+            <Path icon="💻" title="My Computer Science Path">
                 <PathItem
                     title="🏫 I.T.I.S. P. Paleocapa (BG)"
                     years="2019 - 2024"
