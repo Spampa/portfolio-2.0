@@ -8,13 +8,9 @@ import { Container } from "@/components/ui/container"
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 import { Input } from "@/components/ui/input"
 import { Label } from "@radix-ui/react-label"
@@ -26,23 +22,25 @@ import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 export const Contact = () => {
-    const [ isButtonDisabled, setIsButtonDisabled ] = useState(false);
-    const [ message, setMessage ] = useState('');
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+    const [message, setMessage] = useState('');
+
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         setIsButtonDisabled(true);
         event.preventDefault();
 
         const formData = new FormData(event.currentTarget);
-        const formObject: { [key: string]: any } = {};
+        const formObject: { [key: string]: FormDataEntryValue } = {};
         formData.forEach((value, key) => {
             formObject[key] = value;
         });
 
-        try{
+        try {
             await emailjs.send("service_a14ysfy", "template_5fynrem", formObject, { publicKey: "HVrXTNvOJanq7mOl9" });
             setMessage('✔️ Email sended correctly :)');
         }
-        catch(err){
+        catch (err) {
+            console.error(err);
             setMessage('❗Error retry later...');
         }
         setIsButtonDisabled(false);

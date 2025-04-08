@@ -14,10 +14,10 @@ export const Hero = () => {
 
                 <div className="flex flex-col gap-4 order-2 xl:order-1">
 
-                    <h1 className="hidden xl:block font-bold text-3xl">👋 Hello I'm <span className=" font-bold">Nicolò Spampatti</span></h1>
+                    <h1 className="hidden xl:block font-bold text-3xl">👋 Hello I&apos;m <span className=" font-bold">Nicolò Spampatti</span></h1>
 
                     <h2 className="font-semibold text-xl md:text-2xl">I am a passionate Fullstack Developer with a deep love for computer science.</h2>
-                    <h3 className="text-base md:text-xl text-justify border-l-2 p-3">In this space, you can explore the projects I've worked on, the skills I've developed, and the experiences that have shaped my career over the years.</h3>
+                    <h3 className="text-base md:text-xl text-justify border-l-2 p-3">In this space, you can explore the projects I&apos;ve worked on, the skills I&apos;ve developed, and the experiences that have shaped my career over the years.</h3>
 
                     <div className="flex flex-row gap-2">
                         <Button onClick={() => window.open('https://github.com/Spampa', '_blank')} className="flex flex-row gap-2 items-center">
