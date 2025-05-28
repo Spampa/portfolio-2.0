@@ -37,7 +37,7 @@ export const Contact = () => {
 
         try {
             await emailjs.send("service_a14ysfy", "template_5fynrem", formObject, { publicKey: "HVrXTNvOJanq7mOl9" });
-            setMessage('✔️ Email sended correctly :)');
+            setMessage('✔️ Email sent correctly :)');
         }
         catch (err) {
             console.error(err);
