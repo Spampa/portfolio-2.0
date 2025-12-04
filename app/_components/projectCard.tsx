@@ -14,7 +14,7 @@ interface CardProps {
 
 export function ProjectCard({ title, description, isOnline, repoLink, link, image }: CardProps) {
     return (
-        <Card className="text-center">
+        <Card className="text-center text-balance">
             <CardHeader>
                 <CardTitle className="flex flex-row items-center gap-3 place-content-center">
                     {image}
@@ -33,7 +33,7 @@ export function ProjectCard({ title, description, isOnline, repoLink, link, imag
                                 <ArrowTopRightIcon className="size-4" />
                             </Button>
                             :
-                            <Button disabled variant="destructive" className="flex flex-row gap-1 items-center">
+                            <Button disabled variant="outline" className="flex flex-row gap-1 items-center">
                                 Service Offline
                                 <Cross2Icon className="size-6" />
                             </Button>

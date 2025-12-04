@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button"
 //icons
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import Link from "next/link"
 
 export const Contact = () => {
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
@@ -76,17 +77,25 @@ export const Contact = () => {
                 </CardContent>
             </Card>
             <div className="flex flex-row gap-1">
-                <Button onClick={() => window.location.href = 'https://www.instagram.com/nico.spampa'} variant={"outline"} size={"icon"}>
-                    <FaInstagram className="size-6" />
+                <Button variant={"ghost"} size={"icon"}>
+                    <Link href={'https://www.instagram.com/nico.spampa'} target="_blank" rel="noopener noreferrer">
+                        <FaInstagram className="size-6" />
+                    </Link>
                 </Button>
-                <Button onClick={() => window.location.href = 'mailto:nicolo.spampa@gmail.com'} variant={"outline"} size={"icon"}>
-                    <SiGmail className="size-6" />
+                <Button variant={"ghost"} size={"icon"}>
+                    <Link href={'mailto:nicolo.spampa@gmail.com'} target="_blank" rel="noopener noreferrer">
+                        <SiGmail className="size-6" />
+                    </Link>
                 </Button>
-                <Button onClick={() => window.location.href = 'https://www.linkedin.com/in/nicol%C3%B2-spampatti-b7833931b/'} variant={"outline"} size={"icon"}>
-                    <FaLinkedin className="size-6" />
+                <Button variant={"ghost"} size={"icon"}>
+                    <Link href={'https://www.linkedin.com/in/nicol%C3%B2-spampatti-b7833931b/'} target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin className="size-6" />
+                    </Link>
                 </Button>
-                <Button onClick={() => window.location.href = 'https://github.com/Spampa'} variant={"outline"} size={"icon"}>
-                    <FaGithub className="size-6" />
+                <Button variant={"ghost"} size={"icon"}>
+                    <Link href={'https://github.com/Spampa'} target="_blank" rel="noopener noreferrer">
+                        <FaGithub className="size-6" />
+                    </Link>
                 </Button>
             </div>
         </Container>

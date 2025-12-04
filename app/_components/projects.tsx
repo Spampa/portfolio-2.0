@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export const Projects = () => {
     return (
-        <Container className="bg-secondary-foreground text-secondary flex flex-col items-center" id="projects">
+        <Container className="bg-foreground text-secondary flex flex-col items-center" id="projects">
             <h2 className="text-center font-bold text-3xl relative bottom-10">My Projects</h2>
             <div className="flex flex-col md:flex-row gap-1 items-center place-content-center w-min">
                 <ProjectCard
