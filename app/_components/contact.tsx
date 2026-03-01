@@ -77,23 +77,23 @@ export const Contact = () => {
                 </CardContent>
             </Card>
             <div className="flex flex-row gap-1">
-                <Button variant={"ghost"} size={"icon"}>
-                    <Link href={'https://www.instagram.com/nico.spampa'} target="_blank" rel="noopener noreferrer">
+                <Button variant={"ghost"} size={"icon"} asChild>
+                    <Link href={'https://www.instagram.com/nico.spampa'} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <FaInstagram className="size-6" />
                     </Link>
                 </Button>
-                <Button variant={"ghost"} size={"icon"}>
-                    <Link href={'mailto:nicolo.spampa@gmail.com'} target="_blank" rel="noopener noreferrer">
+                <Button variant={"ghost"} size={"icon"} asChild>
+                    <Link href={'mailto:nicolo.spampa@gmail.com'} target="_blank" rel="noopener noreferrer" aria-label="Email">
                         <SiGmail className="size-6" />
                     </Link>
                 </Button>
-                <Button variant={"ghost"} size={"icon"}>
-                    <Link href={'https://www.linkedin.com/in/nicol%C3%B2-spampatti-b7833931b/'} target="_blank" rel="noopener noreferrer">
+                <Button variant={"ghost"} size={"icon"} asChild>
+                    <Link href={'https://www.linkedin.com/in/nicol%C3%B2-spampatti-b7833931b/'} target="_blank" rel="noopener noreferrer" aria-label="Linkedin">
                         <FaLinkedin className="size-6" />
                     </Link>
                 </Button>
-                <Button variant={"ghost"} size={"icon"}>
-                    <Link href={'https://github.com/Spampa'} target="_blank" rel="noopener noreferrer">
+                <Button variant={"ghost"} size={"icon"} asChild>
+                    <Link href={'https://github.com/Spampa'} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <FaGithub className="size-6" />
                     </Link>
                 </Button>

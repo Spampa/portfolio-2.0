@@ -2,13 +2,14 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button";
 
 import { GitHubLogoIcon, ArrowTopRightIcon, Cross2Icon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 interface CardProps {
     title: string,
     description: string,
     repoLink: string,
     isOnline: boolean
-    link?: string
+    link: string
     image?: React.ReactNode
 }
 
@@ -21,16 +22,18 @@ export function ProjectCard({ title, description, isOnline, repoLink, link, imag
                     <p className="text-2xl font-semibold">{title}</p>
                 </CardTitle>
             </CardHeader>
-            <CardContent className="h-[120px]">
-                <p>{description}</p>
+            <CardContent className="h-30">
+                <p className="text-pretty text-sm">{description}</p>
             </CardContent>
             <CardFooter className="place-content-center">
                 <div className="flex flex-row gap-1">
                     {
                         isOnline ?
-                            <Button onClick={() => window.open(link, '_blank')} className="flex flex-row gap-3">
-                                Service Online
-                                <ArrowTopRightIcon className="size-4" />
+                            <Button className="flex flex-row gap-3" asChild>
+                                <Link href={link} target="_blank" rel="noopener noreferrer">
+                                    Service Online
+                                    <ArrowTopRightIcon className="size-4" />
+                                </Link>
                             </Button>
                             :
                             <Button disabled variant="outline" className="flex flex-row gap-1 items-center">
@@ -39,9 +42,11 @@ export function ProjectCard({ title, description, isOnline, repoLink, link, imag
                             </Button>
                     }
 
-                    <Button variant={"outline"} onClick={() => window.open(repoLink, '_blank')} className="flex flex-row gap-3 item">
-                        Github Repo
-                        <GitHubLogoIcon className="size-4" />
+                    <Button variant={"outline"} className="flex flex-row gap-3 item" asChild>
+                        <Link href={repoLink} target="_blank" rel="noopener noreferrer">
+                            Github Repo
+                            <GitHubLogoIcon className="size-4" />
+                        </Link>
                     </Button>
                 </div>
             </CardFooter>

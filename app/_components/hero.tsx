@@ -12,7 +12,7 @@ export const Hero = () => {
         <Container className="bg-secondary text-foreground p-0 md:p-0" id="about">
             <div className="grid xl:grid-cols-2 gap-14 xl:gap-4 items-center">
                 <div className="flex flex-col gap-2 place-content-end md:place-content-center items-center order-1 pt-24 xl:pt-0 ">
-                    <div className="h-[300px] w-[300px] xl:h-full xl:w-full rounded-full xl:rounded-none bg-primary">
+                    <div className="h-75 w-75 xl:h-full xl:w-full rounded-full xl:rounded-none bg-primary">
                         <Image
                             src="/me.png"
                             alt="Picture of the author"

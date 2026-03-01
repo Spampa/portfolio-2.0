@@ -10,25 +10,13 @@ export const Projects = () => {
             <h2 className="text-center font-bold text-3xl relative bottom-10">My Projects</h2>
             <div className="flex flex-col md:flex-row gap-1 items-center place-content-center w-min">
                 <ProjectCard
-                    title="Green Hortus"
-                    description="Manage your grennhouse with this web application based on React, Node JS and Maria DB."
-                    repoLink="https://github.com/Gi0Vaa/GreenHortus"
-                    isOnline={false}
-                    image={<Image
-                        src="/GH.png"
-                        alt="Picture of Green Hortus"
-                        width={40}
-                        height={40}
-                    />}
-                />
-                <ProjectCard
-                    title="UNIBG Calendar Tool"
-                    description="Automatizza la gestione del tuo orario scolastico UNIBG sincronizzandolo con Google Calendar! 🚀 "
-                    repoLink="https://github.com/Spampa/calendar-unibg-tool"
+                    title="MySagra"
+                    description="Open-source fair-code solution for managing and organizing community festivals. Fast to install, simple to use, designed for food stands and vendors."
+                    repoLink="https://github.com/MySagra/mysagra"
+                    link="https://mysagra.com"
                     isOnline={true}
-                    link="https://www.unibgcalendar.it/"
                     image={<Image
-                        src="/unibgCalendar.png"
+                        src="https://mysagra.com/favicon.png"
                         alt="Picture of Green Hortus"
                         width={40}
                         height={40}
